@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="webit_sitemap.exposer.chain.class">Webit\Sitemap\Exposer\UrlExposerChain</parameter>
+        <parameter key="webit_sitemap.urlset_writer.serializer.class">Webit\Sitemap\Writer\SerializerUrlSetWriter</parameter>
+    </parameters>
+	
+    <services>
+        <service id="webit_sitemap.exposer.chain" class="%webit_sitemap.exposer.chain.class%" />
+        <service id="webit_sitemap.exposer" alias="webit_sitemap.exposer.chain" />
+        <service id="webit_sitemap.urlset_writer.serializer" class="%webit_sitemap.urlset_writer.serializer.class%">
+            <argument type="service" id="serializer" />
+            <argument>%webit_sitemap.tmp_dir%</argument>
+        </service>
+        <service id="webit_sitemap.urlset_writer" alias="webit_sitemap.urlset_writer.serializer" />
+    </services>
+</container>
