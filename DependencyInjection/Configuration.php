@@ -21,6 +21,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('webit_sitemap');
         $rootNode->children()
             ->scalarNode('tmp_dir')->defaultValue('%kernel.cache_dir%/sitemap')->end()
+            ->scalarNode('generation_interval')->defaultValue(1)->end()
         ->end();
 
         return $treeBuilder;

@@ -7,6 +7,7 @@
     <parameters>
         <parameter key="webit_sitemap.exposer.chain.class">Webit\Sitemap\Exposer\UrlExposerChain</parameter>
         <parameter key="webit_sitemap.urlset_writer.serializer.class">Webit\Sitemap\Writer\SerializerUrlSetWriter</parameter>
+        <parameter key="webit_sitemap.sitemap_provider.class">Webit\Sitemap\Provider\SitemapProvider</parameter>
     </parameters>
 	
     <services>
@@ -17,5 +18,11 @@
             <argument>%webit_sitemap.tmp_dir%</argument>
         </service>
         <service id="webit_sitemap.urlset_writer" alias="webit_sitemap.urlset_writer.serializer" />
+        <service id="webit_sitemap.sitemap_provider" class="%webit_sitemap.sitemap_provider.class%">
+        	<argument type="service" id="webit_sitemap.exposer" />
+        	<argument type="service" id="webit_sitemap.urlset_writer" />
+            <argument>%webit_sitemap.generation_interval%</argument>
+            <argument>%kernel.root_dir%/../web</argument>
+        </service>
     </services>
 </container>
