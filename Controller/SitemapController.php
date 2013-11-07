@@ -16,8 +16,8 @@ class SitemapController extends Controller {
         
         $response = new Response();
         
-        $response->headers->add('Content-Type','application/xml');
-        $response->headers->add('Content-Length',filesize($sitemap->getPathname()));
+        $response->headers->set('Content-Type','application/xml');
+        $response->headers->set('Content-Length',filesize($sitemap->getPathname()));
         $response->setContent(file_get_contents($sitemap->getPathname()));
         
         return $response;
