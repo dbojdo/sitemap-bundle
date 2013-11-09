@@ -22,7 +22,7 @@
         	<argument type="service" id="webit_sitemap.exposer" />
         	<argument type="service" id="webit_sitemap.urlset_writer" />
             <argument>%webit_sitemap.generation_interval%</argument>
-            <argument>%kernel.root_dir%/../web</argument>
+            <argument>%webit_sitemap.target_dir%</argument>
         </service>
     </services>
 </container>
