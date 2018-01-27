@@ -1,30 +1,34 @@
 {
-	"name" : "webit/sitemap-bundle",
-	"description" : "Web-IT Sitemap Bundle",
-	"type" : "symfony-bundle",
-	"authors" : [{
-			"name" : "Web-IT",
-			"homepage" : "http://www.web-it.eu"
-		}
-	],
-	"keywords" : [
-		"web-it",
-		"sitemap"
-	],
-	"homepage" : "http://www.web-it.eu",
-	"license" : [
-		"Web-IT"
-	],
-	"require" : {
-		"webit/sitemap" : "dev-master",
-		"php" : ">=5.3.2",
-		"symfony/framework-bundle" : "~2.1",
-		"jms/serializer-bundle" : "~0.12|~1.0"
-	},
-	"autoload" : {
-		"psr-0" : {
-			"Webit\\Bundle\\SitemapBundle" : ""
-		}
-	},
-	"target-dir" : "Webit/Bundle/SitemapBundle"
+    "name": "webit/sitemap-bundle",
+    "description": "Web-IT Sitemap Bundle",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Web-IT",
+            "homepage": "http://www.web-it.eu"
+        }
+    ],
+    "keywords": [
+        "web-it",
+        "sitemap"
+    ],
+    "homepage": "http://www.web-it.eu",
+    "license": "MIT",
+    "require": {
+        "webit/sitemap": "^1.0.0",
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "^2.1|^3.0|^4.0",
+        "jms/serializer-bundle": "^0.12|^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webit\\Bundle\\SitemapBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev",
+            "dev-0.11": "0.x-dev"
+        }
+    }
 }
