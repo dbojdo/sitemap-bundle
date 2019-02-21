@@ -14,7 +14,7 @@
         <service id="webit_sitemap.exposer.chain" class="%webit_sitemap.exposer.chain.class%" />
         <service id="webit_sitemap.exposer" alias="webit_sitemap.exposer.chain" />
         <service id="webit_sitemap.urlset_writer.serializer" class="%webit_sitemap.urlset_writer.serializer.class%">
-            <argument type="service" id="serializer" />
+            <argument type="service" id="jms_serializer" />
             <argument>%webit_sitemap.tmp_dir%</argument>
         </service>
         <service id="webit_sitemap.urlset_writer" alias="webit_sitemap.urlset_writer.serializer" />
