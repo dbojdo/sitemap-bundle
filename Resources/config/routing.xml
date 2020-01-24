@@ -4,11 +4,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 	<route id="webit_sitemap_generate" path="/sitemap/generate">
-        <default key="_controller">WebitSitemapBundle:Sitemap:generateSitemap</default>
+        <default key="_controller">WebitSitemapBundle:Sitemap:getSitemap</default>
+        <default key="regenerate">true</default>
     </route>
     
 	<route id="webit_sitemap_get" path="/sitemap">
         <default key="_controller">WebitSitemapBundle:Sitemap:getSitemap</default>
+        <default key="regenerate">false</default>
     </route>
     
     <route id="webit_sitemap_static" path="/sitemap.xml">
